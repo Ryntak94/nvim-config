@@ -33,5 +33,3 @@ The `surround.lua` plugin which makes it easier to surround text with different 
 The `telescope.lua` plugin is for searching for and through files. use `ctrl+p` to search for a file and `<space>gf` will fuzzy search your files
 
 The `treesitter.lua` plugin basically syntax highlighting.
-
-
