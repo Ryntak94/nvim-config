@@ -2,7 +2,7 @@ This is my own personal nvim configuration. I'll walk you through the different 
 
 This largely comes from the [youtube series](https://www.youtube.com/playlist?list=PLsz00TDipIffreIaUNk64KxTIkQaGguqn) by typecraft, with a few modifications of my own.
 
-The init.lua file here at the root simply loads the options from the `lua/vim-options.lua` file, and then the lazy plugin manager which is configured in `lua/config/lazy.lua`
+The `init.lua` file here at the root simply loads the options from the `lua/vim-options.lua` file, and then the lazy plugin manager which is configured in `lua/config/lazy.lua`
 
 The `vim-options` file sets a few options. Some basic key bindings, relative linen numbers, turns off swap files (a system for preventing the same file open in two places from being overwritten on accident), and some general text formatting options.
 
@@ -27,6 +27,8 @@ The `lualine.lua` plugin is a display at the bottom of the file (can be configur
 The `neo-tree.lua` plugin is a file tree. `<space>fg` will format your file
 
 The `none-ls.lua` plugin is similar to the `lsp-config.lua` except it's configured for eslint and prettier. I believe it's working but the output of `:checkhealth` has me second guessing this. I'll have to look into it some more.
+
+The `surround.lua` plugin which makes it easier to surround text with different characters. See the plugin's [README.md](init.lua) for the motions.
 
 The `telescope.lua` plugin is for searching for and through files. use `ctrl+p` to search for a file and `<space>gf` will fuzzy search your files
 
