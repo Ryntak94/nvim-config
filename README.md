@@ -22,6 +22,8 @@ The `barbar.lua` plugin is for tabs. I've created a few useful mappings. A coupl
 
 The `debugging.lua` plugin is not currently working correctly/entirely (maybe if I wasn't trying to test it against docker it would be), that needs more work and I'd like someone to help me who knows more about this kind of stuff.
 
+The `hardtime.lua` plugin helps you form better git habits by stopping repetitve motions and telling you a more efficient way to do something.
+
 The `lazygit.lua` plugin is a git gui of sorts. It's supposed to be really good for merge conflicts. Shouls also be handy for some other git commands. I'm not sure if I'll use it in place of the cli or not long term for commiting/pulling/pushing.
 
 The `lsp-config.lua` is configurations for lsp's which are the servives that manage things like code actions, code lenses, etc. This is what allows you to jump to a function or variable definition. You wouldn't want to use a text editor without this today.
