@@ -16,6 +16,8 @@ The `catpuccin.lua` plugin is a colorscheme. This will not work in Mac's `Termin
 
 The `completions.lua` plugin is configured for autocompletion and snippets for lua and javascript.
 
+The `diffview.lua` plugin is a nicer git diff viewer.
+
 The `barbar.lua` plugin is for tabs. I've created a few useful mappings. A couple things to note: `:q` doesn't close a buffer/tab. It closes a window. If you are in a tab and want to close it, `:q` will likely close more than the tab you are viewing. Use `<leader>bc` or rebind it.
 
 The `debugging.lua` plugin is not currently working correctly/entirely (maybe if I wasn't trying to test it against docker it would be), that needs more work and I'd like someone to help me who knows more about this kind of stuff.
