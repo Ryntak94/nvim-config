@@ -52,7 +52,7 @@ The `surround.lua` plugin which makes it easier to surround text with different 
 
 The `telescope.lua` plugin is for searching for and through files. use `ctrl+p` to search for a file and `<space>gf` will fuzzy search your files.
     When opening files from telescope you can use `<C-v>` and `<C-x>` to open them in vertical and horizontal split panes respectively.
-    Split panes are considered "different windows" for the purpose of `:q`, however the buffer will remain open. you will also be able to cycle through all open tabs in the split pane, play around with it. Also includes `telescope-undo` for viewing the undo tree with `<leader>u`
+    Split panes are considered "different windows" for the purpose of `:q`, however the buffer will remain open. you will also be able to cycle through all open tabs in the split pane, play around with it.
 
 The `treesitter.lua` plugin basically syntax highlighting.
 
