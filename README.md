@@ -22,6 +22,8 @@ The `barbar.lua` plugin is for tabs. I've created a few useful mappings. A coupl
 
 The `debugging.lua` plugin is not currently working correctly/entirely (maybe if I wasn't trying to test it against docker it would be), that needs more work and I'd like someone to help me who knows more about this kind of stuff.
 
+The `git-blame.lua` adds the commit message of the current line, as well as a few other hotkeys.
+
 The `hardtime.lua` plugin helps you form better git habits by stopping repetitve motions and telling you a more efficient way to do something.
 
 The `lazygit.lua` plugin is a git gui of sorts. It's supposed to be really good for merge conflicts. Shouls also be handy for some other git commands. I'm not sure if I'll use it in place of the cli or not long term for commiting/pulling/pushing.
@@ -50,7 +52,7 @@ The `surround.lua` plugin which makes it easier to surround text with different 
 
 The `telescope.lua` plugin is for searching for and through files. use `ctrl+p` to search for a file and `<space>gf` will fuzzy search your files.
     When opening files from telescope you can use `<C-v>` and `<C-x>` to open them in vertical and horizontal split panes respectively.
-    Split panes are considered "different windows" for the purpose of `:q`, however the buffer will remain open. you will also be able to cycle through all open tabs in the split pane, play around with it.
+    Split panes are considered "different windows" for the purpose of `:q`, however the buffer will remain open. you will also be able to cycle through all open tabs in the split pane, play around with it. Also includes `telescope-undo` for viewing the undo tree with `<leader>u`
 
 The `treesitter.lua` plugin basically syntax highlighting.
 
