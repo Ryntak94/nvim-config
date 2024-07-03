@@ -14,7 +14,7 @@ return {
 		},
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "tsserver" },
+				ensure_installed = { "lua_ls", "tsserver", "phpactor", "html" },
 			})
 		end,
 	},
@@ -34,7 +34,14 @@ return {
 			lspconfig.html.setup({
 				capabilities = capabilities,
 			})
-
+			lspconfig.phpactor.setup({
+				capabilities = capabilities,
+			})
+			vim.diagnostic.config({ virtual_text = false })
+			local floatError = function()
+				vim.diagnostic.open_float()
+			end
+			vim.keymap.set("n", "ge", floatError)
 			vim.keymap.set("n", "gh", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "gD", vim.lsp.buf.declaration, {})
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
