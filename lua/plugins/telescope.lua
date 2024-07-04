@@ -17,6 +17,38 @@ return {
 				":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>"
 			)
 			vim.keymap.set("n", "<leader>rg", builtin.resume, {})
+			local pickers = require("telescope.pickers")
+			local finders = require("telescope.finders")
+			local conf = require("telescope.config").values
+			local actions = require("telescope.actions")
+			local action_state = require("telescope.actions.state")
+
+			local pickContainer = function(opts)
+				opts = opts or {}
+				local containers = vim.split(vim.api.nvim_exec("!docker ps --format '{{.Names}}'", true), "\n")
+				table.remove(containers, 1)
+				table.remove(containers, 1)
+				print(vim.inspect(containers))
+				pickers
+					.new(opts, {
+						prompt_title = "Containers",
+						finder = finders.new_table({
+							results = containers,
+						}),
+						sorter = conf.generic_sorter(opts),
+						attach_mappings = function(prompt_bufnr, map)
+							actions.select_default:replace(function()
+								actions.close(prompt_bufnr)
+								local selection = action_state.get_selected_entry()
+								vim.g.containerToTestAgainst = selection[1]
+							end)
+							return true
+						end,
+					})
+					:find()
+			end
+			vim.keymap.set("n", "<leader>pc", pickContainer, {})
+			-- to execute the function
 		end,
 	},
 	{

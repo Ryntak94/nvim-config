@@ -1,11 +1,16 @@
 return {
 	"vim-test/vim-test",
+	dependencies = {
+		"preservim/vimux",
+	},
 	config = function()
 		vim.cmd([[
     function! DockerTransform(cmd) abort
-      if stridx(execute("pwd"), "flannel") != -1
-        echom "contains flannel"
-        return "docker exec flannel-dev ".a:cmd
+      let container = luaeval("vim.inspect(vim.g.containerToTestAgainst)")
+
+      if strchars(container) && container != "nil"
+        let command = "docker exec " . container . " ".a:cmd
+        return command
       end
         echom "does not contain flannel"
       return "".a:cmd
@@ -18,5 +23,7 @@ return {
 		vim.keymap.set("n", "<leader>a", ":TestSuite<CR>")
 		vim.keymap.set("n", "<leader>lt", ":TestLast<CR>")
 		vim.keymap.set("n", "<leader>lv", ":TestVisit<CR>")
+		vim.cmd("let test#strategy = 'vimux'")
+		vim.g["VimuxRunnerName"] = "DEDICATED_TESTER"
 	end,
 }

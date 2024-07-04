@@ -66,6 +66,7 @@ return {
 						request = "attach",
 						name = "Attach",
 						mode = "remote",
+						processId = require("dap.utils").pick_process,
 						remoteRoot = "/code",
 						localRoot = "${workspaceFolder}",
 						protocol = "inspector",
