@@ -15,7 +15,10 @@ return {
       return "".a:cmd
     endfunction
     let g:test#runner_commands = ["Jest"]
-    let test#javascript#jest#options = "--colors"
+    let test#javascript#jest#options =  {
+    \ 'all': '--colors',
+    \ 'suite': '--all',
+    \ }
     let g:test#custom_transformations = {"docker": function("DockerTransform")}
     let g:test#transformation = "docker"
   ]])
