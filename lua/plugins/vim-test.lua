@@ -12,9 +12,10 @@ return {
         let command = "docker exec " . container . " ".a:cmd
         return command
       end
-        echom "does not contain flannel"
       return "".a:cmd
     endfunction
+    let g:test#runner_commands = ["Jest"]
+    let test#javascript#jest#options = "--colors"
     let g:test#custom_transformations = {"docker": function("DockerTransform")}
     let g:test#transformation = "docker"
   ]])
