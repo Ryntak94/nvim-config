@@ -29,6 +29,7 @@ return {
 				table.remove(containers, 1)
 				table.remove(containers, 1)
 				print(vim.inspect(containers))
+				containers[#containers + 1] = "None"
 				pickers
 					.new(opts, {
 						prompt_title = "Containers",
@@ -40,6 +41,9 @@ return {
 							actions.select_default:replace(function()
 								actions.close(prompt_bufnr)
 								local selection = action_state.get_selected_entry()
+								if selection[1] == "None" then
+									selection[1] = nil
+								end
 								vim.g.containerToTestAgainst = selection[1]
 							end)
 							return true
