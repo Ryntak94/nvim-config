@@ -5,7 +5,10 @@ return {
 		"nvim-tree/nvim-web-devicons",
 	},
 	init = function()
+		require("gitsigns").setup()
+
 		vim.g.barbar_auto_setup = false
+
 		vim.keymap.set("n", "gt", ":BufferNext<CR>")
 		vim.keymap.set("n", "gT", ":BufferPrevious<CR>")
 		vim.keymap.set("n", "gmt", ":BufferMoveNext<CR>")

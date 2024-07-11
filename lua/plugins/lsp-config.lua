@@ -16,7 +16,7 @@ return {
 		},
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "tsserver", "phpactor", "html", "gopls", "angularls" },
+				ensure_installed = { "lua_ls", "tsserver", "intelephense", "html", "gopls", "angularls" },
 			})
 		end,
 	},
@@ -99,7 +99,7 @@ return {
 			lspconfig.html.setup({
 				capabilities = capabilities,
 			})
-			lspconfig.phpactor.setup({
+			lspconfig.intelephense.setup({
 				capabilities = capabilities,
 			})
 			lspconfig.gopls.setup({
