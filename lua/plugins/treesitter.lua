@@ -7,6 +7,7 @@ return {
 		local config = require("nvim-treesitter.configs")
 		config.setup({
 			ensure_installed = {
+				"angular",
 				"bash",
 				"diff",
 				"go",
@@ -24,6 +25,14 @@ return {
 			},
 			highlight = { enable = true },
 			indent = { enable = true },
+		})
+
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = "htmlangular",
+			callback = function(args)
+				vim.treesitter.start(args.buf, "angular")
+				vim.bo[args.buf].syntax = "on"
+			end,
 		})
 	end,
 }
