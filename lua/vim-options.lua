@@ -20,7 +20,7 @@ vim.keymap.set("n", "<esc>", ":noh <CR>")
 local client = vim.lsp.start_client({
 	name = "go-lsp",
 	cmd = { "./main" },
-	cmd_cwd = "/Users/ryan/Work/test/vs-code-go-lspextension/go-lsp/bin",
+	cmd_cwd = "/Users/ryan/Work/go-lsp/bin",
 })
 
 if not client then
