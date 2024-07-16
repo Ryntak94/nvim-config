@@ -34,7 +34,7 @@ The `autopair.lua` plugin is used for automatically generating closing quotes an
 
 The `catpuccin.lua` plugin is a colorscheme. This will not work in Mac's `Terminal.app`. It also turns on integrations for other plugins that I have that aren't on by default.
 
-The `barbar.lua` plugin is for tabs. I've created a few useful mappings. A couple things to note: `:q` doesn't close a buffer/tab. It closes a window. If you are in a tab and want to close it, `:q` will likely close more than the tab you are viewing. Use `<leader>bc` or rebind it.
+The `barbar.lua` plugin is for tabs. I've created a few useful mappings. A couple things to note: `:q` doesn't close a buffer/tab. It closes a window. If you are in a tab and want to close it, `:q` will likely close more than the tab you are viewing. Use `<leader>bc` or rebind it. Additionally, I'm stupid and set `gitsigns` up here. This gives you indications about line changes. There are other uses but that's what I'm familiar with.
 
 The `comment.lua` file gives support for commenting out lines easily/quickly.
 
