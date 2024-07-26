@@ -16,7 +16,7 @@ return {
 		},
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "angularls", "lua_ls", "tsserver", "phpactor", "html", "gopls" },
+				ensure_installed = { "angularls", "lua_ls", "tsserver", "intelephense", "html", "gopls" },
 			})
 		end,
 	},
@@ -36,7 +36,7 @@ return {
 								run_govulncheck = true,
 								test = true,
 								tidy = true,
-								upgrade_dependency = true,
+								upgrade_depphpactorendency = true,
 								vendor = true,
 							},
 							hints = {
@@ -127,7 +127,7 @@ return {
 				capabilities = capabilities,
 			})
 
-			lspconfig.phpactor.setup({
+			lspconfig.intelephense.setup({
 				capabilities = capabilities,
 			})
 			lspconfig.gopls.setup({
