@@ -19,13 +19,21 @@ return {
 			end
 			return ""
 		end
-		getCodeOwner()
+		local codeOwner = getCodeOwner()
+		vim.api.nvim_create_autocmd({ "BufEnter" }, {
+			callback = function()
+				codeOwner = getCodeOwner()
+			end,
+		})
+		local function displayCodeOwner()
+			return codeOwner
+		end
 		lualine.setup({
 			options = {
 				theme = "dracula",
 			},
 			sections = {
-				lualine_b = { "branch", "diff", "diagnostics", getCodeOwner },
+				lualine_b = { "branch", "diff", "diagnostics", displayCodeOwner },
 			},
 		})
 	end,

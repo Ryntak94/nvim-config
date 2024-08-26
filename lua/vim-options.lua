@@ -1,7 +1,7 @@
 vim.cmd("set expandtab")
-vim.cmd("set tabstop=4")
-vim.cmd("set softtabstop=4")
-vim.cmd("set shiftwidth=4")
+vim.cmd("set tabstop=3")
+vim.cmd("set softtabstop=3")
+vim.cmd("set shiftwidth=3")
 
 vim.wo.relativenumber = true
 vim.wo.number = true
@@ -16,6 +16,7 @@ vim.keymap.set("n", "<c-h>", ":wincmd h<CR>")
 vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
 
 vim.keymap.set("n", "<esc>", ":noh <CR>")
+local editorconfig = require("editorconfig")
 
 -- local client = vim.lsp.start_client({
 -- 	name = "go-lsp",
