@@ -54,8 +54,6 @@ The `illuminate.lua` plugin highlights other uses of the same word.
 
 The `indent-blank-line.lua` plugin gives extra indention highlighting for the block you're in.
 
-The `lazygit.lua` plugin is a git gui of sorts. It's supposed to be really good for merge conflicts. Shouls also be handy for some other git commands. I'm not sure if I'll use it in place of the cli or not long term for commiting/pulling/pushing.
-
 The `lsp-config.lua` is configurations for lsp's which are the servives that manage things like code actions, code lenses, etc. This is what allows you to jump to a function or variable definition. You wouldn't want to use a text editor without this today. Also works with treesitter for syntax highlighting.
 
 The `lualine.lua` plugin is a display at the bottom of the file (can be configured for the top, I'm considering that) that displays things such as the (vim) mode you're in, the git branch, the name of the file, the file type, etc.
