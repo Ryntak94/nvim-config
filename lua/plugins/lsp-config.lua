@@ -4,7 +4,7 @@ return {
       lazy = false,
       config = function()
          require("mason").setup({
-            ensure_installed = { "goimports", "gofumpt", "gomodifytags", "impl" },
+            ensure_installed = { "goimports", "gofumpt", "gomodifytags", "impl", "snyk-ls" },
          })
       end,
    },
@@ -16,7 +16,7 @@ return {
       },
       config = function()
          require("mason-lspconfig").setup({
-            ensure_installed = { "angularls", "lua_ls", "tsserver", "intelephense", "html", "gopls" },
+            ensure_installed = { "angularls", "lua_ls", "ts_ls", "intelephense", "html", "gopls", "jsonnet_ls" },
          })
       end,
    },
@@ -105,7 +105,10 @@ return {
          lspconfig.lua_ls.setup({
             capabilities = capabilities,
          })
-         lspconfig.tsserver.setup({
+         lspconfig.ts_ls.setup({
+            capabilities = capabilities,
+         })
+         lspconfig.jsonnet_ls.setup({
             capabilities = capabilities,
          })
          local ok, mason_registry = pcall(require, "mason-registry")
