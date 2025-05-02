@@ -13,13 +13,11 @@ return {
 					env = {
 						PRETTIER_LOCAL_PRETTIER_ONLY = 1,
 					},
-					runtime_condition = function(params)
-						local uri = params.lsp_params.textDocument.uri
-						return string.match(uri, "(monorepo)") == nil
-					end,
+					-- runtime_condition = function(params)
+					-- 	local uri = params.lsp_params.textDocument.uri
+					-- 	return string.match(uri, "(monorepo)") == nil
+					-- end,
 				}),
-				require("none-ls.diagnostics.eslint"),
-				require("none-ls.code_actions.eslint"),
 				null_ls.builtins.formatting.goimports,
 				null_ls.builtins.formatting.gofumpt,
 				null_ls.builtins.code_actions.impl,
