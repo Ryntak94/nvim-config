@@ -20,10 +20,12 @@ return {
             }),
             null_ls.builtins.formatting.goimports,
             null_ls.builtins.formatting.gofumpt,
+            null_ls.builtins.formatting.shellharden,
             null_ls.builtins.code_actions.impl,
             null_ls.builtins.code_actions.gitsigns,
             null_ls.builtins.code_actions.gomodifytags,
             null_ls.builtins.diagnostics.editorconfig_checker,
+            null_ls.builtins.diagnostics.shellharden,
          },
       })
       vim.api.nvim_create_autocmd({ "BufWritePre" }, {
