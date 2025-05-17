@@ -18,6 +18,7 @@ return {
          require("mason-lspconfig").setup({
             ensure_installed = {
                "angularls",
+               "bashls",
                "lua_ls",
                "ts_ls",
                "intelephense",
@@ -118,6 +119,9 @@ return {
             capabilities = capabilities,
          })
          lspconfig.ts_ls.setup({
+            capabilities = capabilities,
+         })
+         lspconfig.bashls.setup({
             capabilities = capabilities,
          })
          lspconfig.jsonnet_ls.setup({
