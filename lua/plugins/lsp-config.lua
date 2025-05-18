@@ -4,7 +4,7 @@ return {
       lazy = false,
       config = function()
          require("mason").setup({
-            ensure_installed = { "goimports", "gofumpt", "gomodifytags", "impl", "snyk-ls", "shellharden" },
+            ensure_installed = { "goimports", "gofumpt", "gomodifytags", "impl", "snyk-ls", "shellharden", "editorconfig-checker", "stylua" },
          })
       end,
    },
@@ -26,7 +26,6 @@ return {
                "gopls",
                "jsonnet_ls",
                "eslint",
-               "editorconfig-checker"
             },
          })
       end,
