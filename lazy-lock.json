@@ -17,7 +17,7 @@
   "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
   "lazydocker.nvim": { "branch": "main", "commit": "3330d1fc32ff2f52652d5abb1f75123ce5549cfc" },
   "lazygit.nvim": { "branch": "main", "commit": "b9eae3badab982e71abab96d3ee1d258f0c07961" },
-  "lualine.nvim": { "branch": "master", "commit": "ecfcfee812ef4fee1e86ae8f315c4a045f7da719" },
+  "lualine.nvim": { "branch": "master", "commit": "5a7cabf8e4a174c22351cbbdbe50310ee2172243" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "ce0e87c0be12e7c48296a7513e90430e3eac7f24" },
   "mason.nvim": { "branch": "main", "commit": "9eaedb864cdadc29c6eb7d761a6c0d8aee26c91b" },
   "neo-tree.nvim": { "branch": "v3.x", "commit": "f481de16a0eb59c985abac8985e3f2e2f75b4875" },
@@ -46,6 +46,6 @@
   "trouble.nvim": { "branch": "main", "commit": "85bedb7eb7fa331a2ccbecb9202d8abba64d37b3" },
   "vim-illuminate": { "branch": "master", "commit": "fbc16dee336d8cc0d3d2382ea4a53f4a29725abf" },
   "vim-test": { "branch": "master", "commit": "b0c3e13249699a522c8b472ff79eff40d2935476" },
-  "vim-tmux-navigator": { "branch": "master", "commit": "64803fdd19a36211eba5e39f86c4cbceae8e1d06" },
+  "vim-tmux-navigator": { "branch": "master", "commit": "c11a21d22f718a8e9eb80b2ad48fb3dc24ab975c" },
   "vimux": { "branch": "master", "commit": "7db6b2f79d432ee3820668b1d4625311dbe1d0ad" }
 }
