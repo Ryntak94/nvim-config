@@ -17,22 +17,5 @@ vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
 
 vim.keymap.set("n", "<esc>", ":noh <CR>")
 
+---@diagnostic disable-next-line: unused-local
 local editorconfig = require("editorconfig")
-
--- local client = vim.lsp.start_client({
---    name = "go-lsp",
---    cmd = { "./main" },
---    cmd_cwd = "/Users/ryan/Work/go-lsp/bin",
--- })
---
--- if not client then
---    vim.notify("hey, you didn't do the client thing good")
---    return
--- end
---
--- vim.api.nvim_create_autocmd("FileType", {
---    pattern = "go",
---    callback = function()
---       vim.lsp.buf_attach_client(0, client)
---    end,
--- })
