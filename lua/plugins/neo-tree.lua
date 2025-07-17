@@ -7,11 +7,13 @@ return {
     "MunifTanjim/nui.nvim",
     "3rd/image.nvim",
   },
+  keys = {
+    { "<C-n>", "<CMD>Neotree filesystem reveal left<CR>", desc = "Open Neo-tree" },
+  },
   config = function()
-    vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal left<CR>", {});
-    local neotree = require("neo-tree");
-    neotree.setup({
+    require("neo-tree").setup({
       close_if_last_window = true
     })
+    vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal left<CR>", {});
   end
 }

@@ -35,3 +35,4 @@ require("lazy").setup({
 })
 
 require("lazy.view.config").keys.close = "<Esc>"
+require("config/lsp-setup")

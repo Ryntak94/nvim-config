@@ -6,8 +6,31 @@ return {
          "nvim-lua/plenary.nvim",
          "nvim-telescope/telescope-live-grep-args.nvim",
       },
+      cmd = "Telescope",
+      keys = {
+         { "<C-p>", "<cmd>Telescope find_files<cr>", desc = "Find files" },
+         { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find files" },
+         { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent files" },
+         { "<leader>fg", "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>", desc = "Live grep" },
+         { "<leader>rg", "<cmd>Telescope resume<cr>", desc = "Resume telescope" },
+         { "<leader>pc", desc = "Pick container" },
+      },
       config = function()
+         local telescope = require("telescope")
          local builtin = require("telescope.builtin")
+         
+         telescope.setup({
+            extensions = {
+               ["ui-select"] = {
+                  require("telescope.themes").get_dropdown({}),
+               },
+            },
+         })
+         
+         telescope.load_extension("ui-select")
+         telescope.load_extension("live_grep_args")
+         
+         -- Set up keymaps that require telescope to be loaded
          vim.keymap.set("n", "<C-p>", builtin.find_files, {})
          vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
          vim.keymap.set("n", "<leader>fr", builtin.oldfiles, {})
@@ -17,6 +40,8 @@ return {
             ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>"
          )
          vim.keymap.set("n", "<leader>rg", builtin.resume, {})
+         
+         -- Container picker function
          local pickers = require("telescope.pickers")
          local finders = require("telescope.finders")
          local conf = require("telescope.config").values
@@ -28,7 +53,6 @@ return {
             local containers = vim.split(vim.api.nvim_exec("!docker ps --format '{{.Names}}'", true), "\n")
             table.remove(containers, 1)
             table.remove(containers, 1)
-            print(vim.inspect(containers))
             containers[#containers + 1] = "None"
             pickers
                 .new(opts, {
@@ -52,22 +76,10 @@ return {
                 :find()
          end
          vim.keymap.set("n", "<leader>pc", pickContainer, {})
-         -- to execute the function
       end,
    },
    {
       "nvim-telescope/telescope-ui-select.nvim",
-      config = function()
-         local telescope = require("telescope")
-         telescope.setup({
-            extensions = {
-               ["ui-select"] = {
-                  require("telescope.themes").get_dropdown({}),
-               },
-            },
-         })
-         telescope.load_extension("ui-select")
-         telescope.load_extension("live_grep_args")
-      end,
+      lazy = true,
    },
 }

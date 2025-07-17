@@ -3,6 +3,13 @@ return {
 	dependencies = {
 		"preservim/vimux",
 	},
+	keys = {
+		{ "<leader>t", desc = "Test nearest" },
+		{ "<leader>T", desc = "Test file" },
+		{ "<leader>a", desc = "Test suite" },
+		{ "<leader>lt", desc = "Test last" },
+		{ "<leader>lv", desc = "Test visit" },
+	},
 	config = function()
 		vim.cmd([[
     function! DockerTransform(cmd) abort

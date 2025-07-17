@@ -1,8 +1,11 @@
 return {
 	"phaazon/hop.nvim",
-	branch = "v2", -- optional but strongly recommended
+	branch = "v2",
+	keys = {
+		{ "f", desc = "Hop forward" },
+		{ "F", desc = "Hop backward" },
+	},
 	config = function()
-		-- you can configure Hop the way you like here; see :h hop-config
 		local hop = require("hop")
 		hop.setup({ keys = "etovxqpdygfblzhckisuran" })
 		local directions = require("hop.hint").HintDirection
