@@ -8,17 +8,17 @@ return {
       },
       cmd = "Telescope",
       keys = {
-         { "<C-p>", "<cmd>Telescope find_files<cr>", desc = "Find files" },
-         { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find files" },
-         { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent files" },
+         { "<C-p>",      "<cmd>Telescope find_files<cr>",                                                desc = "Find files" },
+         { "<leader>ff", "<cmd>Telescope find_files<cr>",                                                desc = "Find files" },
+         { "<leader>fr", "<cmd>Telescope oldfiles<cr>",                                                  desc = "Recent files" },
          { "<leader>fg", "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>", desc = "Live grep" },
-         { "<leader>rg", "<cmd>Telescope resume<cr>", desc = "Resume telescope" },
+         { "<leader>rg", "<cmd>Telescope resume<cr>",                                                    desc = "Resume telescope" },
          { "<leader>pc", desc = "Pick container" },
       },
       config = function()
          local telescope = require("telescope")
          local builtin = require("telescope.builtin")
-         
+
          telescope.setup({
             extensions = {
                ["ui-select"] = {
@@ -26,10 +26,10 @@ return {
                },
             },
          })
-         
+
          telescope.load_extension("ui-select")
          telescope.load_extension("live_grep_args")
-         
+
          -- Set up keymaps that require telescope to be loaded
          vim.keymap.set("n", "<C-p>", builtin.find_files, {})
          vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
@@ -40,7 +40,7 @@ return {
             ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>"
          )
          vim.keymap.set("n", "<leader>rg", builtin.resume, {})
-         
+
          -- Container picker function
          local pickers = require("telescope.pickers")
          local finders = require("telescope.finders")

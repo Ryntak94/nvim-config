@@ -71,7 +71,7 @@ return {
 
             lspconfig.angularls.setup({
                cmd = cmd,
-               on_new_config = function(new_config, new_root_dir)
+               on_new_config = function(new_config)
                   new_config.cmd = cmd
                end,
                capabilities = capabilities,
@@ -91,8 +91,9 @@ return {
                   if string.sub(params.file, string.len(params.file) - 2, string.len(params.file)) ~= "php" then
                      return
                   end
+                  ---@diagnostic disable-next-line: redefined-local
                   local ok, stats = pcall(vim.loop.fs_stat, params.file)
-                  if ok and stats.size > 990000 then
+                  if ok and stats ~= nil and stats.size > 990000 then
                      vim.cmd("!code " .. params.file)
                   end
                end,
